@@ -24,7 +24,7 @@ Above results lead to(since $P_X$ below can be written as $XX^g$):
 **Theorem 1** $\mathbf { P } _ { \mathbf { X } } = \mathbf { X } \left( \mathbf { X } ^ { T } \mathbf { X } \right) ^ { g } \mathbf { X } ^ { T }$ is the proj matrix onto $\mathcal{C}(X)$
 Thus have
 
-1. $\mathbf{I-P_X}$ is the proj matrix onto $\mathcal{N}(\mathbf{X^T})$
+1. $\mathbf{I-P_X}$ is the proj matrix onto $\mathcal{N}(\mathbf{X}^T)$
 
 2. The solutions for the NEs are solutions for $\mathbf { X b } = \mathbf { P } _ { \mathbf { X }  }\mathbf{y}$
 
