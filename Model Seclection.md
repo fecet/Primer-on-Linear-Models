@@ -2,7 +2,7 @@
 
 ## Underfitting or Misspecification
 
-If we omit some varibale in the model:$$ \mathbf{y=Xb+\eta+e} $$
+If we omit some variable in the model:$$ \mathbf{y=Xb+\eta+e} $$
 
 Assume $E(\mathbf{e})=0$ and $\operatorname{Var}(\mathbf{e})=\sigma^2\mathbf{I_N}$ as before. Then the estimator becomes$$ E \left( \lambda ^ { T } \hat { \mathbf { b } } \right) = \lambda ^ { T } \left( \mathbf { X } ^ { T } \mathbf { X } \right) ^ { g } \mathbf { X } ^ { T } E ( \mathbf { y } ) = \lambda ^ { T } \left( \mathbf { X } ^ { T } \mathbf { X } \right) ^ { g } \mathbf { X } ^ { T } ( \mathbf { X } \mathbf { b } + \eta ) = \lambda ^ { T } \mathbf { b } + \mathbf { a } ^ { T } \mathbf { P } _ { \mathbf { X } } \eta $$
 
@@ -45,4 +45,4 @@ Another measurment of multicollinearity is MSE. Suppose the estimators of $\sigm
 
 $$ \begin{aligned} E \left\{ \| \hat { \mathbf { b } } - \mathbf { b } \| ^ { 2 } \right\} & = E \left\{ ( \hat { \mathbf { b } } - \mathbf { b } ) ^ { T } ( \hat { \mathbf { b } } - \mathbf { b } ) \right\} = \operatorname { tr } E \{ ( \hat { \mathbf { b } } - \mathbf { b } ) ( \hat { \mathbf { b } } - \mathbf { b } ) \\ & = \text {trace } \operatorname { Cov } ( \hat { \mathbf { b } } ) = \sigma ^ { 2 } \operatorname { tr } \left( \mathbf { X } ^ { T } \mathbf { X } \right) ^ { - 1 } \end{aligned} $$
 
-Empolyed SVD leads to $ \sigma \operatorname{tr}(\mathbf{X}^T\mathbf{X})=\sigma\operatorname{tr}(\mathbf{V\mathbf{\Lambda}^T\Lambda }\mathbf{V}^T)^{-1}=\sigma\operatorname{tr}(\mathbf{\Lambda}^T\mathbf{\Lambda})^{-1}=\sum_{i}{\frac{\sigma}{e_i}}$ where $e_i$ is eigenvalues.
+Empoly SVD leads to $ \sigma \operatorname{tr}(\mathbf{X}^T\mathbf{X})=\sigma\operatorname{tr}(\mathbf{V\mathbf{\Lambda}^T\Lambda }\mathbf{V}^T)^{-1}=\sigma\operatorname{tr}(\mathbf{\Lambda}^T\mathbf{\Lambda})^{-1}=\sum_{i}{\frac{\sigma}{e_i}}$ where $e_i$ is eigenvalues.
