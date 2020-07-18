@@ -2,7 +2,7 @@
 
 The Aitken model relax the assumption of Gauss-Markov model in covariance, that is $\operatorname{Cov}(\mathbf{e})=\sigma^2\mathbf{V}$ where $\mathbf{V}$ is posdef.
 
-Then we should find $\mathbf{R}$, s.t. $\mathbf{RVR}^T=\mathbf{I}$. We can approch this by two ways: Cholesky factorization ($\mathbf{V}=\mathbf{LL}^T\implies \mathbf{R}=\mathbf{L}^{-1}$) and spectral decomposition ($\mathbf{V}=\mathbf{Q\Lambda Q}^T\implies \mathbf { R } = \mathbf { Q } \mathbf { \Lambda } ^ { - 1 / 2 } \mathbf { Q } ^ { T }$)
+Then we should find square root $\mathbf{R}$, s.t. $\mathbf{RVR}^T=\mathbf{I}$. We can approch this by two ways: Cholesky factorization ($\mathbf{V}=\mathbf{LL}^T\implies \mathbf{R}=\mathbf{L}^{-1}$) or spectral decomposition ($\mathbf{V}=\mathbf{Q\Lambda Q}^T\implies \mathbf { R } = \mathbf { Q } \mathbf { \Lambda } ^ { - 1 / 2 } \mathbf { Q } ^ { T }$).(It's symmetric square root).	
 
 Then we can transform Aitken model into $$ \mathbf{z=Ry=RXb+Re=Ub+f} $$ where $E(\mathbf{f})=\mathbf{R}E(\mathbf{e})=0$ and $\operatorname{Cov}(\mathbf{z})=\mathbf{R}\operatorname{Cov}(\mathbf{y})\mathbf{R}^T=\sigma^2\mathbf{RVR}^T=\sigma^2\mathbf{I}$, that is why we should find $\mathbf{R}$ with such form.
 
@@ -34,4 +34,4 @@ We can extended it to vector space then prove as before. And so we have $\mathbf
 
 Then we consider when $\hat{b}_{OLS}$ is BLUE under the Aitken model. Since $\lambda^T \hat{b}_{OLS}=\lambda^T (\mathbf{X}^T\mathbf{X})^g\mathbf{X}^T\mathbf{y}$, to make it be BLUE for all $\lambda$, we have for all $\mathbf{a}$, $\mathbf{VP_Xa} \in \mathcal{C}(\mathbf{X})$ where $\lambda=\mathbf{X}^T\mathbf{a}$ That is, 
 
-> Under the Aitken model, all OLS estimator are BLUE iff there exist some matrix $\mathbf{Q}$, s.t. $\mathbf{VX=XQ}$
+> Under the Aitken model, all OLS estimator are BLUE iff there exist some matrix $\mathbf{Q}$, s.t. $\mathbf{VX=XQ}$ or $\mathcal{C}(\mathbf{VX})=\mathcal{C}(\mathbf{X})$

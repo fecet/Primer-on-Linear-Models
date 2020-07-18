@@ -1,0 +1,5 @@
+ItoProcess[\[DifferentialD]x[
+     t] == -x[t] \[DifferentialD]t + \[DifferentialD]w[t], 
+  x[t], {x, 1}, {t, 3}, 
+  w \[Distributed] 
+   OrnsteinUhlenbeckProcess[0, 1, 1, 1]] // ProcessParameterQ

@@ -39,7 +39,7 @@ Consider the estimator of $\mathbf{0}$, that is $E(\mathbf{t}^T\mathbf{y})=\math
 
 > The estimator $\mathbf{a}^T\mathbf{y}$ is BLUE iff it's uncorrelated with all unbiased estimator of zero.
 
-We can extended Gauss-Markov theorem to the vector space, that is, suppose we have another estimatos $\mathbf{C}^T\mathbf{y}$ for $\mathbf{\Lambda}^T\mathbf{b}$, then $\operatorname { Cov } ( \mathbf { C } ^ { T } \mathbf { y }) - \operatorname { Cov } ( \mathbf { \Lambda } ^ { T } \hat { \mathbf { b } } )$ is semi posdef.
+We can extended Gauss-Markov theorem to the vector space, that is, suppose we have another estimators $\mathbf{C}^T\mathbf{y}$ for $\mathbf{\Lambda}^T\mathbf{b}$, then $\operatorname { Cov } ( \mathbf { C } ^ { T } \mathbf { y }) - \operatorname { Cov } ( \mathbf { \Lambda } ^ { T } \hat { \mathbf { b } } )$ is semi posdef.
 
 **Proof**:
 Similar to the proof in original version:
@@ -57,7 +57,9 @@ $$\begin{aligned}
  \mathbf{x}^T\mathbf{C}^T(\mathbf{I}-\mathbf{P_X})\mathbf{C}\mathbf{x}&=\|(\mathbf{I-P_X})\mathbf{Cx}\|^2\ge0
 \end{aligned}$$
 
-Equality occures iff $\mathbf{(I-P_X)C=0}$, or componet of $\mathbf{C}$ is in $\mathcal{C}(\mathcal{\mathbf{X}})$, that is exactly what we get in the unextended case.  $\ \ \blacksquare$
+Equality occurs iff $\mathbf{(I-P_X)C=0}$, or component of $\mathbf{C}$ is in $\mathcal{C}(\mathcal{\mathbf{X}})$, that is exactly what we get in the unextended case.  $\ \ \blacksquare$
+
+From above proof, we get a by-product which is $\operatorname{Cov}(\mathbf{y})=\sigma^2\mathbf{I}$ and $\operatorname{Cov}(\mathbf{\hat{y}})=\sigma^2\mathbf{P_X}$
 
 ## Variance Estimation
 
@@ -84,9 +86,9 @@ Recall the constrained model with constrains $\mathbf{P}^T\mathbf{b}=\delta$, wh
 
 $$  \left[ \begin{array} { c c } \mathbf { X } ^ { T } \mathbf { X } & \mathbf { P } \\ \mathbf { P } ^ { T } & \mathbf { 0 } \end{array} \right] \left[ \begin{array} { l } \mathbf { b } \\ \theta \end{array} \right] = \left[ \begin{array} { c } \mathbf { X } ^ { T } \mathbf { y } \\ \delta \end{array} \right]  $$
 
-> **Lemma 1** If $\lambda^T\mathbf{b}$ is estimable, then following euqations are consistent. $$ \left[ \begin{array} { c c } \mathbf { X } ^ { T } \mathbf { X } & \mathbf { P } \\ \mathbf { P } ^ { T } & \mathbf { 0 } \end{array} \right] \left[ \begin{array} { l } \mathbf { v } _ { 1 } \\ \mathbf { v } _ { 2 } \end{array} \right] = \left[ \begin{array} { l } \lambda \\ \mathbf { 0 } \end{array} \right] $$
+> **Lemma 1** If $\lambda^T\mathbf{b}$ is estimable, then following equations are consistent. $$ \left[ \begin{array} { c c } \mathbf { X } ^ { T } \mathbf { X } & \mathbf { P } \\ \mathbf { P } ^ { T } & \mathbf { 0 } \end{array} \right] \left[ \begin{array} { l } \mathbf { v } _ { 1 } \\ \mathbf { v } _ { 2 } \end{array} \right] = \left[ \begin{array} { l } \lambda \\ \mathbf { 0 } \end{array} \right] $$
 
-> **Lemma 2** If $\lambda^T\mathbf{b}$ is estimable, then $\lambda^T\mathbf{\hat{b}_H}$ is its unbiasd estimator.
+> **Lemma 2** If $\lambda^T\mathbf{b}$ is estimable, then $\lambda^T\mathbf{\hat{b}_H}$ is its unbiased estimator.
 
 **Proof** Employed lemma 1, we have
 
