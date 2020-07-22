@@ -1,4 +1,4 @@
-# Discrete Distribuutions
+# Discrete Distributions
 
 ## Discrete Uniform
 

@@ -53,7 +53,7 @@ then $\mathbf{Y_{1:m}}$ are jointly independent iff $\forall i\neq j \ni \mathbf
 $$ \begin{aligned} M _ { \mathbf { Y } } ( \mathbf { t } ) & = \exp \left( \mathbf { t } ^ { \prime } \boldsymbol { \mu } + \mathbf { t } ^ { \prime } \mathbf { V } \mathbf { t } / 2 \right) \\ & = \exp \left( \sum _ { i = 1 } ^ { m } \mathbf { t } _ { i } ^ { \prime } \boldsymbol { \mu } _ { i } + \sum _ { i = 1 } ^ { m } \mathbf { t } _ { i } ^ { \prime } \mathbf { V } _ { i i } \mathbf { t } _ { i } / 2 \right) \\ & = \prod _ { i = 1 } ^ { m } \exp \left( \mathbf { t } _ { i } ^ { \prime } \boldsymbol { \mu } _ { i } + \mathbf { t } _ { i } ^ { \prime } \mathbf { V } _ { i i } \mathbf { t } _ { i } / 2 \right) = \prod _ { i = 1 } ^ { m } M _ { \mathbf { Y } _ { i } } \left( \mathbf { t } _ { i } \right)\  \blacksquare 
 \end{aligned} $$
 
-### Conditinoal distributions
+### Conditional distributions
 
 Suppose $\mathbf{X}=( X , Y ) ^ { \prime } \sim \mathcal { N } _ { 2 } ( \boldsymbol { \mu } ,  \mathbf{V})$
 
@@ -125,7 +125,7 @@ $$ \begin{aligned} M _ { X } ( t ) = E \left[ \left( \frac { 1 } { 1 - 2 t } \ri
 
 **Proof** Trival from above two results.
 
-> If $\mathbf{X}\sim N_p(\mu,\mathbf{V})$ where we assume $\mathbf{V}$ is nonsingular, then $W=\mathbf{X'VX}\sim \chi_p^2(\frac{1}{2}\mu'\mathbf{V}^{-1}\mu)$
+> If $\mathbf{X}\sim N_p(\mu,\mathbf{V})$ where we assume $\mathbf{V}$ is nonsingular, then $W=\mathbf{X'V}^{-1}\mathbf{X}\sim \chi_p^2(\frac{1}{2}\mu'\mathbf{V}^{-1}\mu)$
 
 **Proof**
 
@@ -175,13 +175,76 @@ $$ \begin{aligned} \operatorname { Pr } ( W > c ) & = \operatorname { Pr } \left
 
 ## Quadratic forms
 
-> Suppose symmrtric matrix $p\times p$ $\mathbf{A}$. It's idempotent of rank $s$ iff there exist a $p\times s$ $\mathbf{P}$  $\ni \mathbf{PP'=A}$ and $\mathbf{P'P=I}$.
+> Suppose symmetric matrix $p\times p$ $\mathbf{A}$. It's idempotent of rank $s$ iff there exist a $p\times s$ $\mathbf{P}$  $\ni \mathbf{PP'=A}$ and $\mathbf{P'P=I}$.
 
-**Proof** Sufficiency is trival. For necessity, since $\mathbf{A}$ is symmetric and idempotent matrix, it can be spectral decompostioned by $\mathbf{A=Q\Lambda Q'}$. Where the diagonal of $\mathbf{\Lambda}$  is $s$ 1 and $p-s$ 0. Thus
+**Proof** Sufficiency is trivial. For necessity, since $\mathbf{A}$ is symmetric and idempotent matrix, it can be spectral decompostioned by $\mathbf{A=Q\Lambda Q'}$. Where the diagonal of $\mathbf{\Lambda}$  is $s$ 1 and $p-s$ 0. Thus
 
 $$ \mathbf{A=Q\Lambda Q'}= \left( \begin{array} { l l } \mathbf{P_1} & \mathbf{P_2} \end{array} \right) \left( \begin{array} { l l } \mathbf { I } _ { s } & 0 \\ 0 & 0 \end{array} \right) \left( \begin{array} { l } \mathbf { P } _ { 1 } ^ { \prime } \\ \mathbf { P } _ { 2 } ^ { \prime } \end{array} \right) = \mathbf { P } _ { 1 } \mathbf { P } _ { 1 } ^ { \prime } $$
 
-Note $$ \mathbf { I } _ { p } = \mathbf { Q } ^ { \prime } \mathbf { Q } = \left( \begin{array} { c } \mathbf { P } _ { 1 } ^ { \prime } \\ \mathbf { P } _ { 2 } ^ { \prime } \end{array} \right) \left( \begin{array} { c c } \mathbf { P } _ { 1 } & \mathbf { P } _ { 2 } \end{array} \right) = \left( \begin{array} { c c } \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 2 } \\ \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 2 } \end{array} \right)= \left( \begin{array} { c c } \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 2 } \\ \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 2 } \end{array} \right)=$$
+Note $$ \mathbf { I } _ { p } = \mathbf { Q } ^ { \prime } \mathbf { Q } = \left( \begin{array} { c } \mathbf { P } _ { 1 } ^ { \prime } \\ \mathbf { P } _ { 2 } ^ { \prime } \end{array} \right) \left( \begin{array} { c c } \mathbf { P } _ { 1 } & \mathbf { P } _ { 2 } \end{array} \right) = \left( \begin{array} { c c } \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 2 } \\ \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 2 } \end{array} \right)= \left( \begin{array} { c c } \mathbf { P } _ { 1 } ^ { \prime } \mathbf { P } _ { 1 } & \mathbf{0}\\ \mathbf{0} & \mathbf { P } _ { 2 } ^ { \prime } \mathbf { P } _ { 2 } \end{array} \right)$$
+
+hence $\mathbf{P_1'P_1=I_s}$. $\quad \blacksquare$
+
+> If $\mathbf{Y}\sim N_p(\mu,\mathbf{I_p})$,if $\mathbf{A}$ is idempotent of rank $s$, then $\mathbf{Y'AY}\sim \chi_s^2(\frac{1}{2}\mu'\mathbf{A}\mu)$
+
+**Proof**: Since $\mathbf{A}=\mathbf{PP'}$ where $\mathbf{P}$ is $p\times s$. Thus $$\mathbf { Y } ^ { \prime } \mathbf { A } \mathbf { Y } = \mathbf { Y } ^ { \prime } \mathbf { P }  \mathbf { P } ^ { \prime } \mathbf { Y } = \mathbf { X } ^ { \prime } \mathbf { X }$$
+
+where $\mathbf{X}=\mathbf{P'Y}\sim N_s(\mathbf{P'}\mu,\mathbf{I})$. From previous result we have $ \mathbf{X'X}\sim \chi_s^2(\lambda)$ where
+
+$$ \lambda \equiv \frac { 1 } { 2 } \left( \mathbf { P } _ { 1 } ^ { \prime } \boldsymbol { \mu } \right) ^ { \prime } \mathbf { P } _ { 1 } ^ { \prime } \boldsymbol { \mu } = \frac { 1 } { 2 } \boldsymbol { \mu } ^ { \prime } \mathbf { P } _ { 1 } \mathbf { P } _ { 1 } ^ { \prime } \boldsymbol { \mu } = \frac { 1 } { 2 } \boldsymbol { \mu } ^ { \prime } \mathbf { A } \boldsymbol { \mu }.\quad \blacksquare $$
+
+> If $\mathbf{Y}\sim N_p(\mu,\mathbf{V})$, where we assume $\mathbf{V}$ is nonsingular, if $\mathbf{AV}$ is idempotent of rank $s$,then $\mathbf{Y'AY}\sim \chi_s^2(\frac{1}{2}\mu'\mathbf{A}\mu)$.
+
+**Proof**  We can construct $\mathbf{X}=\mathbf{V}^{-1/2}\mathbf{Y}\sim N_p(\mathbf{V}^{-1/2}\mu,\mathbf{I})$. Then
+
+$$ \mathbf { Y } ^ { \prime } \mathbf { A } \mathbf { Y } = \mathbf { X } ^ { \prime } \mathbf { V } ^ { 1 / 2 } \mathbf { A } \mathbf { V } ^ { 1 / 2 } \mathbf { X } = \mathbf { X } ^ { \prime } \mathbf { B } \mathbf { X } $$
+
+Where $\mathbf{B}=\mathbf{\sqrt{V}A\sqrt{V}}$, it's idempotent since
+
+$$ \mathbf{\sqrt{V}A\sqrt{V}}\mathbf{\sqrt{V}A\sqrt{V}}=\mathbf{\sqrt{V}AVA\sqrt{V}}=\mathbf{\sqrt{V}A\sqrt{V}} $$
+
+Note that $\mathbf{AVA=A}$ since $\mathbf{AVAV=AV}$ and $\mathbf{V}$ is nonsingular. then
+
+$$ rank(\mathbf{\sqrt{V}A\sqrt{V}})=tr(\mathbf{\sqrt{V}A\sqrt{V}})=tr(\mathbf{AV})=rank(\mathbf{AV})=s $$
+
+From last result, we have $\mathbf { Y } ^ { \prime } \mathbf { A Y } = \mathbf { X } ^ { \prime } \mathbf { B } \mathbf { X } \sim \chi _ { s } ^ { 2 } ( \lambda )$, where
+
+$$ \lambda = \frac { 1 } { 2 } \left( \mathbf{\sqrt{V}} \boldsymbol { \mu } \right) ^ { \prime } \mathbf { B } \left( \mathbf{\sqrt{V}} \boldsymbol { \mu } \right) = \frac { 1 } { 2 } \boldsymbol { \mu } ^ { \prime } \mathbf{\sqrt{V}} \mathbf { \sqrt{V} }  \mathbf { A } \mathbf { \sqrt{V} }  \mathbf{\sqrt{V}} \boldsymbol { \mu } = \frac { 1 } { 2 } \boldsymbol { \mu } ^ { \prime } \mathbf { A } \boldsymbol { \mu }\quad \blacksquare $$
+
+### Independence
+
+Let $\mathbf{X}\sim N_p(\mu,\mathbf{V})$, and $\mathbf{A}$ be symmetric and $rank(\mathbf{A})=s$, then $\mathbf{BVA=0}$ implies $\mathbf{BX}$ and $\mathbf{X'AX}$ are independent, where $\mathbf{B}$ is $q\times p$.
+
+**Proof** Note $\mathbf{A}$ has $p-s$ 0 eigenvalues and $s$ nonzero eigenvalues, hence $\mathbf{A}$ can be spectral decomposition as $\mathbf{A=Q\Lambda Q'}$ where $\mathbf{Q}$ is $p \times s$. $\mathbf{X'AX=X'Q\Lambda Q' X }$ is function of $\mathbf{Q'X}$. Then we prove $\mathbf{Q'X}$ and $\mathbf{BX}$ are independent. Construct
+
+$$ \left[ \begin{array} { c } \mathbf { B X } \\ \mathbf { Q }^ {\prime } \mathbf { X } \end{array} \right] = \left[ \begin{array} { c } \mathbf { B } \\ \mathbf { Q }  ^ {\prime } \end{array} \right] \mathbf { X } \sim N _ { q + s } \left( \left[ \begin{array} { c } \mathbf { B } \mu \\ \mathbf { Q }  ^ { \prime } \mu \end{array} \right] , \left[ \begin{array} { c c } \mathbf { B V B } ^ { \prime } & \mathbf { B V Q }  \\ \mathbf { Q } ^ { \prime } \mathbf { V B } ^ {\prime } & \mathbf { Q } ^ { \prime } \mathbf { V Q }  \end{array} \right] \right) $$
+
+Then we show that $\mathbf{BVA=0}\iff\mathbf{BVQ=0}$
+
+$$ \mathbf { B V A } = \mathbf { B V Q }  \mathbf { \Lambda }  \mathbf { Q }'=0 \iff \mathbf{BVQ\Lambda Q'Q}=\mathbf{BVQ\Lambda}=0\iff \mathbf{BVQ=0}\quad \blacksquare $$
+
+> Suppose $\mathbf{B}$ is symmetric with rank $r$, then $\mathbf{BVA=0}$ implies $\mathbf{X'AX}$ and $\mathbf{X'BX}$ are independent.
+
+**Proof** Since $\mathbf{X'BX}=\mathbf{X'Q_B\Lambda_B Q_B'X}$, we only need to ptove $\mathbf{Q_B'X}$ and $\mathbf{Q'X}$ are independent. Replace $\mathbf{B}$ by $\mathbf{Q'_B}$ in last proof, then show that $\mathbf{BVA=0} \iff \mathbf{Q_B'VQ=0}$:
+
+$$ \mathbf{BVA}=\mathbf{Q_B\Lambda_B Q_B'VQ\Lambda Q'=0}\iff $$  $$ \mathbf{\Lambda_B^{-1}Q_B' Q_B\Lambda_B Q_B'VQ\Lambda Q'Q\Lambda^{-1}=Q_B'VQ=0}\quad \blacksquare $$
+
+### Application in linear model
+
+In GM model $\mathbf{y=Xb+e}$, consider$ SSE=\mathbf{y'(I-P_X)y} $ where $\mathbf{y}\sim N(\mathbf{Xb},\sigma^2\mathbf{I_N})$, since $\mathbf{I-P_X}$ is idempotent, hence
+
+$$ S S E / \sigma ^ { 2 } =\frac{\|\hat{e}\|}{\sigma^2}\sim \chi _ { ( N - r ) } ^ { 2 } $$
+
+where noncentrality parameter is $\frac { 1 } { 2 } ( \mathbf { X } \mathbf { b } ) ^ { T } \left( 1 / \sigma ^ { 2 } \right) \left( \mathbf { I } - \mathbf { P } _ { \mathbf { X } } \right) ( \mathbf { X } \mathbf { b } )=0$.
+
+Similarly
+
+$$ \text{uncorrected SSR} / \sigma ^ { 2 }=\frac{\|\hat{y}\|}{\sigma^2}=\frac{\mathbf{y'P_X y}}{\sigma^2} \sim \chi _ { r } ^ { 2 } \left( \frac { 1 } { 2 } ( \mathbf { X } \mathbf { b } ) ^ { T } ( \mathbf { X } \mathbf { b } ) / \sigma ^ { 2 } \right) $$
+
+Then since $\mathbf{\hat{y}=P_Xy}$ and $\mathbf{\hat{e}}=\mathbf{(I-P_X)y}$ and $\mathbf{P_X V (I-P_X)}=0$, $\mathbf{\hat{y}}$ and $\mathbf{\hat{e}}$ are independent. Hence
+
+$$ F = \frac { \| \hat { \mathbf { y } } \| ^ { 2 } / r } { \| \hat { \mathbf { e } } \| ^ { 2 } / ( N - r ) } \sim F _ { r , N - r } \left( \frac { 1 } { 2 } \| \mathbf { X } \mathbf { b } \| ^ { 2 } / \sigma ^ { 2 } \right) $$
+
 
 
 
